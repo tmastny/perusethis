@@ -10,7 +10,7 @@ def create_package(path):
 
     use_directory(name)
 
-    open(join(name, "__init__.py"), "w") as f:
+    with open(join(name, "__init__.py"), "w") as f:
         f.write("def hello(): print('hello world'")
 
 
@@ -23,6 +23,7 @@ def use_directory(name):
 
 def use_manifest():
     # make manifest
+    pass
 
 
 def use_setup(name):
@@ -31,7 +32,7 @@ def use_setup(name):
     setup_template = open(join(dir, "setup.txt"), "r").read()
 
 
-    open("setup.py", "w") as f:
+    with open("setup.py", "w") as f:
       f.write(setup_template.format(name=name))
 
 
@@ -39,19 +40,18 @@ def use_setup(name):
 def use_readme(type="md"):
     # create file
     # add to manifest
+    pass
 
 def use_test(name):
     # check if tests are created
     # create https://python-packaging.readthedocs.io/en/latest/testing.html
     if not os.path.isdir("tests"):
-        os.path.mkdir("tests")
+        os.mkdir("tests")
 
-    open(join("tests", name), "w") as f:
-        f.write("def test_func(): assert 1 = 2")
+    with open(join("tests", "test_" + name + ".py"), "w") as f:
+        f.write("def test_func(): assert 1 == 2")
 
     # create file
-
-    # add lines to setup
 
 
 # Tetsting

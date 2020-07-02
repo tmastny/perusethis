@@ -13,15 +13,15 @@ setuptools.setup(
     description="Python package to create package skeletons.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='',
+    url="",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    keywords='',
+    keywords="",
     python_requires=">=3.6",
     install_requires=requirements,
-    include_package_data=True
+    include_package_data=True,
 )
